@@ -26,6 +26,7 @@ if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +36,15 @@ if( move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path) ){
 </head>
 <body>
     <h1>HI</h1>
+	<form enctype="multipart/form-data" action="uploader.php" method="POST">
+	<p>
+		<input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
+		<label for="uploadfile_input">Choose a file to upload:</label> <input name="uploadedfile" type="file" id="uploadfile_input" />
+	</p>
+	<p>
+		<input type="submit" value="Upload File" />
+	</p>
+</form>
     <a href="logout.php">Logout</a>
 </body>
 </html>
