@@ -1,6 +1,6 @@
 <?php 
 session_start();
-var_dump($_SESSION); // Debug session variables
+
 //brings user to home page if already logged in
 if(isset($_SESSION['user'])){
     header("Location: home.php");
